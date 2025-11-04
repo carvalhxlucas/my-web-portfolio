@@ -1,0 +1,30 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    @if (loading) {
+      <div class="loading">Loading...</div>
+    } @else if (experiences.length > 0) {
+      <div class="experience-list">
+        @for (exp of experiences; track exp.id) {
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-position">{{ exp.position }}</h3>
+                <p class="experience-company">{{ exp.company }}</p>
+              </div>
+              <span class="experience-period">{{ exp.period }}</span>
+            </div>
+            <p class="experience-description">{{ exp.description }}</p>
+            <div class="experience-technologies">
+              @for (tech of exp.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="no-experience">No experience available.</p>
+    }
+  </div>
+</section>

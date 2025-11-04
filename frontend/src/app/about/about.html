@@ -1,0 +1,24 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    @if (loading) {
+      <div class="loading">Loading...</div>
+    } @else if (profile) {
+      <div class="about-content">
+        <div class="about-text">
+          <p class="about-description">{{ profile.bio }}</p>
+          <div class="about-info">
+            <div class="info-item">
+              <strong>Location:</strong>
+              <span>{{ profile.location }}</span>
+            </div>
+            <div class="info-item">
+              <strong>Email:</strong>
+              <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    @if (loading) {
+      <div class="loading">Loading...</div>
+    } @else if (skills.length > 0) {
+      <div class="skills-grid">
+        @for (skill of skills; track skill.name) {
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="no-skills">No skills available.</p>
+    }
+  </div>
+</section>
