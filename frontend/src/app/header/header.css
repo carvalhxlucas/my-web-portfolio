@@ -65,6 +65,14 @@
   width: 100%;
 }
 
+.nav-menu li a.active {
+  color: #007bff;
+}
+
+.nav-menu li a.active::after {
+  width: 100%;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;

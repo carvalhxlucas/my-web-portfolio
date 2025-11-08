@@ -1,0 +1,25 @@
+<section class="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    @if (loading) {
+      <div class="loading">Loading...</div>
+    } @else if (certifications.length > 0) {
+      <div class="certifications-grid">
+        @for (cert of certifications; track cert.name) {
+          <div class="certification-item">
+            <div class="certification-header">
+              <span class="certification-name">{{ cert.name }}</span>
+              <span class="certification-level">{{ cert.level }}%</span>
+            </div>
+            <div class="certification-bar">
+              <div class="certification-progress" [style.width.%]="cert.level"></div>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="no-certifications">No certifications available.</p>
+    }
+  </div>
+</section>
+

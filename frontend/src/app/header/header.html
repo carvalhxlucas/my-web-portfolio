@@ -1,7 +1,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="nav-brand">
-      <a href="#home" (click)="scrollToSection('home')">Portfolio</a>
+      <a routerLink="/" (click)="closeMenu()">carvalhxlucas</a>
     </div>
     <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen">
       <span></span>
@@ -9,12 +9,9 @@
       <span></span>
     </button>
     <ul class="nav-menu" [class.active]="menuOpen">
-      <li><a href="#home" (click)="scrollToSection('home')">Home</a></li>
-      <li><a href="#about" (click)="scrollToSection('about')">About</a></li>
-      <li><a href="#projects" (click)="scrollToSection('projects')">Projects</a></li>
-      <li><a href="#experience" (click)="scrollToSection('experience')">Experience</a></li>
-      <li><a href="#skills" (click)="scrollToSection('skills')">Skills</a></li>
-      <li><a href="#contact" (click)="scrollToSection('contact')">Contact</a></li>
+      <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a></li>
+      <li><a routerLink="/certifications" routerLinkActive="active" (click)="closeMenu()">Certifications</a></li>
     </ul>
   </nav>
 </header>
